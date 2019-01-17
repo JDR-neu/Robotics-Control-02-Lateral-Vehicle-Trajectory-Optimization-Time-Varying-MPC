@@ -35,3 +35,41 @@ Paper reading: 'Robotics-Control-02-Constrained-Linear-Time-Varying-MPC'
     - [1] An optimal-control-based framework for trajectory planning, threat assessment, and semi-autonomous control of passenger vehicles in hazard avoidance scenarios
     - [31] Obstacle avoidance of autonomous vehicles based on model predictive control
     - [38] Optimal trajectories for time-critical street scenarios using discretized terminal manifolds
+
+- Dynamic Programming
+  - advantages:
+    - can be applied to a broad range of **universal** system models
+    - Various different terms can be easily **integrated into the cost function**
+    - even **non convex optimization problems** can be solved globally
+  - disadvantages:
+    - due to the **curse of dimensionality**, is very limited to small order system models
+    - not possible to generate trajectories online that are sufficiently smooth to be used as system inputs for vehicle applications
+  - to combine Dynamic Programming with other optimization methods
+    - [34] Path planning on grid maps with unknown goal poses
+    
+- Indirect Methods
+  - can only be applied to local optimization problems
+  - show great potential with respect to trajectory generation in some special cases
+    - [19] Automatic collision avoidance during parking and maneuvering - an optimal control approach.
+    
+- Direct Methods
+  - convert **the optimal control problem (OCP)** into **nonlinear programming (NLP)** that can be solved using numerical NLP solvers.
+  - are very adequate for finding local solutions to nonlinear problems in real-time
+    - [39] Automatic collision avoidance using model-predictive online optimization
+    - [41] Trajectory planning for Bertha - A local, continuous method
+    - [15] Semi-autonomous vehicle control for road departure and obstacle avoidance
+    - [14] Spatial predictive control for agile semi-autonomous ground vehicles
+  - Apart from Interior Point Methods, **sequential quadratic programming (SQP)-solvers** are well-established for solving NLPs
+  - solving NLPs is very **time-consuming**, as these solvers brake down the NLP into **smaller linear-quadratic programs (QP)** that are solved iteratively using forward simulation of the system dynamics
+  
+- to reduce the computational effort
+  - [10] suggests the formulation of linear-quadratic optimal control problems for trajectory generation.
+    - [10] A linear time varying model predictive control approach to the integrated vehicle dynamics control problem in autonomous systems
+      - no iterations and no initial starting guess
+      - only a single QP-problem
+      - makes the use of linear model predictive control (LMPC) highly favorable for **real-time trajectory generation** with high replanning frequencies.
+      - to apply LMPC to the lateral vehicle guidance problem
+        - [20], [21] and [11] use LMPC for designing a lateral vehicle controller for tracking a given collision free evasive path
+          - [20] Ltv-mpc approach for lateral vehicle guidance by front steering at the limits of vehicle dynamics
+          - [21] Optimal vehicle dynamics control for combined longitudinal and lateral autonomous vehicle guidance
+          - [11] Active front steering using stable model predictive control approach
