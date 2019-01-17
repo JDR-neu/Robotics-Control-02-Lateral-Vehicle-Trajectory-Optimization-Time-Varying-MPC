@@ -11,7 +11,7 @@ Paper reading: 'Robotics-Control-02-Constrained-Linear-Time-Varying-MPC'
   - parking
   - highway driving
 
-### INTRODUCTION
+### I.INTRODUCTION
 - Related works
   - driver in various **monotonous** and challenging driving situations, see [33] and [27].
     - [27] A perspective on emerging automotive safety applications, derived from lessons learned through participation in the darpa grand challenges.
@@ -94,3 +94,18 @@ Paper reading: 'Robotics-Control-02-Constrained-Linear-Time-Varying-MPC'
   - to **allow offsets** to a given reference under consideration of the vehicles environment
     - [26] Combining local trajectory planning and tracking control for au-tonomous ground vehicles navigating along a reference path
     - [25] A novel path tracking controller for ackerman steering vehicles
+
+- main contribution
+  - **an elaborate formulation** of a constrained linear-quadratic optimal control problem for the lateral vehicle guidance task
+    - smooth and collision free trajectories among static obstacles and moving traffic for the vehicle’s lateral movement
+    - even along reference curves that feature high and discontinuous curvature values
+    - can run on a low-performance electronic control unit in milliseconds.
+    - a broad range of automated vehicle applications
+    
+### II. VEHICLE PREDICTION MODEL
+
+- Linear System Model
+
+- Definition of the System Output
+
+- Discrete-Time Vehicle Prediction Model
