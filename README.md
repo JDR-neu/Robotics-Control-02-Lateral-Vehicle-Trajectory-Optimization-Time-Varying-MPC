@@ -67,9 +67,30 @@ Paper reading: 'Robotics-Control-02-Constrained-Linear-Time-Varying-MPC'
     - [10] A linear time varying model predictive control approach to the integrated vehicle dynamics control problem in autonomous systems
       - no iterations and no initial starting guess
       - only a single QP-problem
-      - makes the use of linear model predictive control (LMPC) highly favorable for **real-time trajectory generation** with high replanning frequencies.
-      - to apply LMPC to the lateral vehicle guidance problem
+      - makes the use of **linear model predictive control (LMPC)** highly favorable for **real-time trajectory generation** with high replanning frequencies.
+      - to apply LMPC to the **lateral vehicle guidance problem**
         - [20], [21] and [11] use LMPC for designing a lateral vehicle controller for tracking a given collision free evasive path
           - [20] Ltv-mpc approach for lateral vehicle guidance by front steering at the limits of vehicle dynamics
           - [21] Optimal vehicle dynamics control for combined longitudinal and lateral autonomous vehicle guidance
           - [11] Active front steering using stable model predictive control approach
+      - include the collision avoidance functionality into the **reference tracking concept**, by separating the lateral vehicle guidance task into a high-level trajectory generation layer for collision avoidance and a low-level control layer for stabilizing the vehicle
+        - [9] A hierarchical model predictive control framework for autonomous ground vehicles
+        - [14] Spatial predictive control for agile semi-autonomous ground vehicles
+        
+- Similar to our work
+  - using LMPC for trajectory optimization for lateral vehicle guidance
+    - [1] An optimal-control-based framework for trajectory planning, threat assessment, and semi-autonomous control of passenger vehicles in hazard avoidance scenarios
+    
+- In contrast to our approach
+  - the optimal control problem is formulated only for straight roads and constant speeds
+    - in [28], where the linear system is chosen such that the vehicle heading is used as a system input resulting in kinodynamically infeasible trajectories
+      - [28] Ltv-mpc based path planning of an autonomous vehicle via **convex optimization**.
+    - In [35], a problem formulation is presented that allows for path tracking of low curvature roads
+      - [35] Linear model predictive control for lane keeping and obstacle avoidance on low curvature roads
+- generate trajectories that are similar to **human driving behavior**
+    - [36] A behavioral planning framework for autonomous driving  
+  - **minimize the lateral vehicle jerk** and **limiting the lateral vehicle acceleration** dependent on the current curvature value
+    - [17] Toward human-like motion planning in urban environments
+  - to **allow offsets** to a given reference under consideration of the vehicles environment
+    - [26] Combining local trajectory planning and tracking control for au-tonomous ground vehicles navigating along a reference path
+    - [25] A novel path tracking controller for ackerman steering vehicles
