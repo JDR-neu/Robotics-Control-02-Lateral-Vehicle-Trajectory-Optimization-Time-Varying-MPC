@@ -1,5 +1,5 @@
-# Robotics-Control-02-Constrained-Linear-Time-Varying-MPC
-Paper reading: 'Robotics-Control-02-Constrained-Linear-Time-Varying-MPC'
+# Robotics-Control-02-Lateral-Vehicle-Trajectory-Optimization-Time-Varying-MPC
+Paper reading: 'Lateral Vehicle Trajectory Optimization Using Constrained Linear Time-Varying MPC'
 
 ### Abstract
 - Formulating the system dynamics linearly in combination with a **quadratic cost function** has two great advantages:
